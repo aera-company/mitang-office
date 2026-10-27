@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0c141b"><meta name="description" content="MITANG OFFICE — uma visão AERA para conectar Marketing & Lead Generation ao Comercial. Demonstração conceitual.">
+<title>MITANG OFFICE · AERA × MITANG</title>
+<link rel="icon" type="image/svg+xml" href="/assets/aera.svg"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip-link" href="#department-nav">Ir para os núcleos</a>
+<div id="scene" role="img" aria-label="Pavilhão corporativo tridimensional de dois pavimentos, com fachadas de vidro e interiores iluminados"></div>
+<div id="scene-labels" aria-label="Ambientes do pavilhão"></div>
+<div class="vignette" aria-hidden="true"></div>
+<header class="topbar">
+ <a class="brand" href="#overview" aria-label="MITANG OFFICE — visão geral"><img class="mitang-logo" src="/assets/mitang-mark.png" alt="MITANG" width="825" height="179"><span class="brand-partner">× AERA</span></a>
+ <span class="project-id">OFFICE<span>Marketing & Lead Generation</span></span>
+ <div class="header-right"><span class="concept-badge"><i></i> DEMO CONCEITUAL</span><button id="open-ai" class="quiet-button live-trigger">Abrir Radar <span>↗</span></button><button id="presentation" class="quiet-button" aria-label="Iniciar apresentação"><svg viewBox="0 0 20 20"><path d="m7 4 9 6-9 6Z"/></svg><span>Apresentar</span></button><button id="fullscreen" class="icon-button" aria-label="Tela cheia"><svg viewBox="0 0 20 20"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4"/></svg></button></div>
+</header>
+<main>
+ <section id="intro" class="intro">
+  <p class="eyebrow"><span class="small-rule"></span> AERA × MITANG / VISÃO DA OPERAÇÃO</p>
+  <h1>MITANG<span>OFFICE<span class="title-dot">.</span></span></h1>
+  <p class="disciplines">Inteligência × Ativação × Oportunidade</p>
+  <div class="intro-bottom"><h2>Marketing que encontra<br>negócios.</h2><p>Uma operação AERA conectada<br class="desktop-break"> ao Comercial da MITANG.</p>
+   <button id="experience" class="primary-button">CONHECER A OPERAÇÃO <span>↗</span></button>
+   <button id="explore" class="text-button">EXPLORAR O OFFICE <span>→</span></button>
+  </div>
+ </section>
+ <aside id="context-panel" class="context-panel" hidden aria-label="Detalhes do núcleo">
+  <button class="return-button" id="panel-return">↖ <span>VOLTAR À VISÃO GERAL</span></button>
+  <p class="eyebrow" id="panel-index"></p><h2 id="panel-title"></h2><p id="panel-description" class="panel-description"></p>
+  <ul id="responsibilities"></ul>
+  <div class="application"><span class="eyebrow">UMA APLICAÇÃO POSSÍVEL</span><p id="panel-example"></p></div>
+  <div class="agent"><div class="agent-presence" aria-hidden="true"><span></span></div><div><div class="agent-label"><strong id="agent-name"></strong><span>AGENTE PROPOSTO</span></div><span id="agent-role"></span></div><span class="presence-dot" title="Presença simulada"></span></div>
+  <p id="agent-description" class="agent-description"></p>
+  <button id="next-department" class="next-button">Próximo núcleo <span>→</span></button>
+ </aside>
+ <section id="tour-caption" class="tour-caption" hidden aria-live="polite"><p class="eyebrow" id="tour-phase"></p><h2 id="tour-message"></h2><p id="tour-output"></p></section>
+ <section id="closing" class="closing" hidden><p class="eyebrow">DA INTELIGÊNCIA À CONVERSA COMERCIAL.</p><h2>SINAIS REAIS.<br><span>NOVAS CONVERSAS.</span></h2><p class="closing-pillars">MAPEAR <span>·</span> ATIVAR <span>·</span> AVANÇAR</p><p class="closing-copy">A AERA conecta as frentes.<br>A MITANG conduz proposta, negociação e fechamento.</p><button id="restart" class="text-button">Reiniciar experiência <span>↗</span></button></section>
+ <div id="tour-controls" class="tour-controls" hidden><span id="tour-counter">01 / 07</span><button id="tour-prev" class="icon-button" aria-label="Etapa anterior">←</button><button id="tour-pause" class="quiet-button">Pausar</button><button id="tour-next" class="icon-button" aria-label="Próxima etapa">→</button><button id="tour-stop" class="quiet-button">Sair <span>×</span></button><span class="tour-progress"><span id="tour-progress-fill"></span></span></div>
+ <aside id="work-panel" hidden></aside>
+ <div id="explore-hint" class="explore-hint" hidden><span>EXPLORAÇÃO LIVRE</span> Selecione um núcleo no edifício ou na navegação.</div>
+ <div class="scene-caption"><span id="scene-location">A operação AERA × MITANG.</span><span id="scene-subtitle">Quatro frentes. Uma direção comercial.</span></div>
+ <div id="fallback-notice" class="fallback-notice" hidden role="status"><strong>Modo de referência visual</strong><span id="fallback-reason"></span><a href="?">Tentar carregar o 3D ↗</a></div>
+ <div id="loading" class="loading" role="status"><span class="loading-mark"></span><span>Preparando o MITANG OFFICE<span id="loading-detail">Arquitetura · luz · conexões</span></span></div>
+ <div class="scene-tools"><span id="orbit-hint">Arraste para orbitar <span>·</span> Role para aproximar</span><button id="reset-camera" class="icon-button" aria-label="Return to overview" title="Visão geral · Esc"><svg viewBox="0 0 20 20"><path d="M5 6a6 6 0 1 1-1 7M5 2v4H1"/></svg></button><button id="zoom-in" class="icon-button" aria-label="Aproximar">+</button><button id="zoom-out" class="icon-button" aria-label="Afastar">−</button><button id="agent-motion" class="icon-button agents-motion-button" aria-pressed="true" aria-label="Pausar movimento dos agentes" title="Pausar movimento dos agentes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10m6-10v10"/></svg><span>Agentes</span></button><button id="quality" class="icon-button quality-button" aria-label="Ativar qualidade leve" title="Alternar qualidade" aria-pressed="false">HQ</button></div>
+</main>
+<div class="bottom-area"><div class="nav-heading"><span>QUATRO FRENTES. UMA DIREÇÃO COMERCIAL.</span><span class="nav-heading-right">EXPLORE A VISÃO <span>↙</span></span></div><nav id="department-nav" aria-label="Núcleos integrados"></nav><footer><span class="aera-signature"><img src="/assets/aera.svg" alt="AERA" width="72" height="25"><span>WE MAKE THINGS MOVE.</span></span><span class="footer-center" id="render-status">ARQUITETURA EM TEMPO REAL</span><button id="open-command" class="command-trigger">Comandos <kbd>⌘ K</kbd></button><span class="edition">CONCEITO · OUT 2026</span></footer></div>
+<dialog id="command-dialog" aria-labelledby="command-title"><form id="command-form"><div class="command-header"><label id="command-title" for="command-input">Para onde vamos?</label><button type="button" id="command-close" class="icon-button" aria-label="Fechar comandos">×</button></div><input id="command-input" autocomplete="off" placeholder="Ex.: abrir prospecção" aria-describedby="command-feedback"><p id="command-feedback">Demanda · Comunicação · Prospecção · Radar · Direção</p><div class="command-actions"><span>1–5 núcleos <span>·</span> Esc visão geral <span>·</span> P apresentação</span><button type="submit" class="quiet-button">Ir <span>↵</span></button></div></form></dialog>
+<dialog id="ai-dialog" aria-labelledby="radar-title"><div class="radar-shell">
+<header class="radar-header"><div><p class="eyebrow">MITANG RADAR · CENÁRIO ILUSTRATIVO</p><h2 id="radar-title">Do sinal à oportunidade.</h2></div><button id="radar-close" class="icon-button" aria-label="Fechar Radar">×</button></header>
+<div class="radar-tabs" role="tablist" aria-label="Visões do conceito"><button id="tab-flow" role="tab" aria-selected="true" aria-controls="radar-flow">Uma oportunidade</button><button id="tab-cycle" role="tab" aria-selected="false" aria-controls="radar-cycle" tabindex="-1">Primeiros 90 dias</button></div>
+<section id="radar-flow" role="tabpanel" aria-labelledby="tab-flow"><div class="radar-account"><span class="eyebrow">CONTA FICTÍCIA / OPERADORA A</span><h3>Uma campanha de survey no horizonte.</h3><p>Serviço relacionado: Survey Positioning. Todos os sinais, contatos e movimentos abaixo são exemplos para apresentação.</p></div><ol id="signal-steps" class="signal-steps" aria-label="Etapas do desenvolvimento"></ol><div id="signal-detail" class="signal-detail" aria-live="polite"></div><div class="radar-actions"><button id="signal-reset" class="quiet-button">Recomeçar</button><button id="signal-next" class="primary-button">Próxima etapa <span>→</span></button></div></section>
+<section id="radar-cycle" role="tabpanel" aria-labelledby="tab-cycle" hidden><div class="cycle-grid"><article><span class="eyebrow">01 / 00–30 DIAS</span><h3>Estruturar.</h3><p>Imersão com liderança e Comercial. Serviços prioritários, ICP, contas, auditoria de base e materiais, estrutura de mensagens e Radar V01.</p><strong>Saída: plano do primeiro ciclo.</strong></article><article><span class="eyebrow">02 / 31–60 DIAS</span><h3>Colocar no mercado.</h3><p>Primeiras listas, decisores, campanhas e/ou outbound, LinkedIn e e-mail, follow-up, ativos comerciais e pipeline em uso.</p><strong>Saída: ativação e acompanhamento.</strong></article><article><span class="eyebrow">03 / 61–90 DIAS</span><h3>Aprender e acelerar.</h3><p>Análise de conversão, respostas e objeções. Ajustes de mensagem e ICP, testes de canais e evolução das campanhas e do Radar.</p><strong>Saída: prioridades do próximo ciclo.</strong></article></div><div class="cadence"><span>SEMANAL <b>Operação e pipeline</b></span><span>CONTÍNUO <b>Execução e acompanhamento</b></span><span>PERIÓDICO <b>Imersão na MITANG</b></span><span>MENSAL <b>Estratégia e prioridades</b></span></div><p class="radar-note">Serviço recorrente organizado por prioridades mensais. Os formatos são capacidades da operação; a proposta não prevê produção ilimitada.</p></section>
+<footer class="radar-footer">DEMONSTRAÇÃO CONCEITUAL · Conteúdo predefinido · Sem CRM ou IA conectados</footer></div></dialog>
+<script type="module" src="/app.js"></script>
+</body></html>

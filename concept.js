@@ -1,0 +1,21 @@
+const stages=[
+ {name:'Sinal',owner:'AERA',title:'Uma movimentação merece atenção.',text:'Cenário ilustrativo: uma campanha de survey está prevista para o próximo ciclo da Operadora A.',action:'Registrar a hipótese e verificar contexto, prazo e aderência com a MITANG.'},
+ {name:'Contas',owner:'AERA',title:'Escolher onde faz sentido atuar.',text:'A Operadora A é priorizada por uma hipótese de aderência a Survey Positioning. A classificação depende da validação do contexto.',action:'Mapear a conta, o escopo provável e as informações ainda necessárias.'},
+ {name:'Decisores',owner:'AERA',title:'Encontrar por onde entrar.',text:'Engenharia de Projetos pode funcionar como ponte para a Gerência de Operações. São papéis ilustrativos, sem contatos reais.',action:'Validar os responsáveis e organizar uma abordagem relevante para cada interlocutor.'},
+ {name:'Estratégia',owner:'AERA',title:'Definir mensagem, oferta e canal.',text:'Preparar uma conversa sobre o desafio operacional, apoiada em material técnico aprovado pela MITANG.',action:'Escolher um case e uma one-page de Survey Positioning. Solicitar validação técnica.'},
+ {name:'Ativação',owner:'AERA',title:'Colocar a mensagem no mercado.',text:'Neste exemplo, e-mail direcionado e LinkedIn iniciam o relacionamento. Campanha, evento e outros canais entram conforme a prioridade.',action:'Revisar a abordagem com o Comercial antes de ativar a cadência.'},
+ {name:'Follow-up',owner:'AERA',title:'Desenvolver a relação com contexto.',text:'O Radar registra o material enviado, a resposta e a próxima ação. A preparação se acumula a cada interação.',action:'Retomar a conversa com base na resposta e qualificar necessidade e momento.'},
+ {name:'Reunião',owner:'AERA + MITANG',title:'O Comercial entra mais preparado.',text:'Um brief reúne o sinal, a conta, os interlocutores, o histórico e os materiais. A MITANG participa da conversa e valida o contexto técnico.',action:'Alinhar pauta, responsáveis e perguntas para uma reunião qualificada.'},
+ {name:'Oportunidade',owner:'MITANG',title:'A MITANG conduz o avanço comercial.',text:'A partir da reunião, a MITANG constrói proposta, negocia e fecha. A AERA mantém o apoio de comunicação, inteligência e acompanhamento.',action:'Definir o próximo passo e atualizar o pipeline. O cenário não representa uma oportunidade real.'}
+];
+export function initConcept({onOpen,onClose}){
+ const $=s=>document.querySelector(s);const dialog=$('#ai-dialog');let current=0;
+ function render(){
+  $('#signal-steps').replaceChildren(...stages.map((s,i)=>{const li=document.createElement('li'),b=document.createElement('button');b.textContent=`${String(i+1).padStart(2,'0')} ${s.name}`;b.setAttribute('aria-current',i===current?'step':'false');b.onclick=()=>{current=i;render();};li.append(b);return li;}));
+  const s=stages[current];$('#signal-detail').innerHTML='';const owner=document.createElement('p');owner.className='eyebrow';owner.textContent=`${current+1} / 8 · RESPONSÁVEL: ${s.owner}`;const h=document.createElement('h3');h.textContent=s.title;const body=document.createElement('p');body.textContent=s.text;const next=document.createElement('div');next.className='next-action';const label=document.createElement('span');label.textContent='PRÓXIMA AÇÃO';const copy=document.createElement('p');copy.textContent=s.action;next.append(label,copy);$('#signal-detail').append(owner,h,body,next);$('#signal-next').firstChild.textContent=current===7?'Rever o exemplo ':'Próxima etapa ';$('#signal-reset').disabled=current===0;
+ }
+ $('#signal-next').onclick=()=>{current=(current+1)%8;render();};$('#signal-reset').onclick=()=>{current=0;render();};
+ $('#open-ai').onclick=()=>{onOpen();dialog.showModal();};$('#radar-close').onclick=()=>dialog.close();dialog.addEventListener('close',onClose);
+ const tabs=[$('#tab-flow'),$('#tab-cycle')];function select(i){tabs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;});$('#radar-flow').hidden=i!==0;$('#radar-cycle').hidden=i!==1;}
+ tabs.forEach((b,i)=>{b.onclick=()=>select(i);b.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?1:1-i;select(next);tabs[next].focus();}};});render();
+}
